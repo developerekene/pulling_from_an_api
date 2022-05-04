@@ -6,10 +6,8 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.pokemvvm.R
-import com.example.pokemvvm.ui.pokeinfo.PokeInfoActivity
-import kotlinx.android.synthetic.main.activity_pokeinfo.*
+import com.example.pokemvvm.ui.information.PokeInfoActivity
 import kotlinx.android.synthetic.main.activity_pokelist.*
 
 class PokeListActivity : AppCompatActivity() {

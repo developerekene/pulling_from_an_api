@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.pokemvvm.model.api.PokeApiResponse
 import com.example.pokemvvm.model.api.PokeResult
-import com.example.pokemvvm.service.PokeApiService
+import com.example.pokemvvm.service.Api
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +18,7 @@ class PokeListViewModel() : ViewModel() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private val service: PokeApiService = retrofit.create(PokeApiService::class.java)
+    private val service: Api = retrofit.create(Api::class.java)
 
     val pokemonList = MutableLiveData<List<PokeResult>>()
 
@@ -36,6 +36,7 @@ class PokeListViewModel() : ViewModel() {
 
             override fun onFailure(call: Call<PokeApiResponse>, t: Throwable) {
                 call.cancel()
+                t.message
             }
 
         })

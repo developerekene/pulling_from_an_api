@@ -8,7 +8,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface PokeApiService {
+interface Api {
+    //getting the data from the end point id
     @GET("pokemon/{id}")
     fun getPokemonInfo(@Path("id") id: Int): Call<Pokemon>
 
